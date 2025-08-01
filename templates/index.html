@@ -1,90 +1,208 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>Servo Control</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servo Control Panel</title>
     <style>
+        :root {
+            --button-bg: #3498db;
+            --button-active: #1a6fac;
+            --button-border: #2c3e50;
+            --primary-text: #ffffff;
+            --background: #121212;
+            --button-hover: #5dade2;
+            --header-color: #ecf0f1;
+            --press-scale: 0.96;
+            --press-brightness: 0.8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
         body {
+            font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin: 0;
-            padding: 0;
+            justify-content: flex-start;
             min-height: 100vh;
-            background: #fafafa;
+            background: var(--background);
+            color: var(--primary-text);
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: clamp(1.5rem, 4vw, 2.2rem);
+            margin: 24px 0 20px;
+            text-align: center;
+            font-weight: 600;
+            color: var(--header-color);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
 
         .button-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
             margin-top: 30px;
             width: 100%;
-            max-width: 350px;
+            max-width: min(360px, 90vw);
         }
 
         button {
-            font-size: 1.2rem;
-            padding: 15px 0;
+            font-size: 1.1rem;
+            padding: 16px 0;
             width: 100%;
-            height: 60px;
-            margin: 0;
-            box-sizing: border-box;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-            background: #fff;
-            transition: background 0.2s;
+            height: 65px;
+            border: 2px solid var(--button-border);
+            background: var(--button-bg);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 
+                transform 0.1s ease,
+                filter 0.1s ease,
+                box-shadow 0.2s ease;
+            font-weight: 500;
+            color: var(--primary-text);
+            touch-action: manipulation;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
             user-select: none;
-            -webkit-user-select: none;
-            -ms-user-select: none;
-            -moz-user-select: none;
+            position: relative;
+            overflow: hidden;
         }
 
-        button:active {
-            background: #e0e0e0;
+        button:hover {
+            background: var(--button-hover);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.25);
         }
 
-        h1 {
-            font-size: 2rem;
-            margin-top: 24px;
-            margin-bottom: 12px;
-            text-align: center;
+        button:active, button.touch-active {
+            transform: scale(var(--press-scale));
+            filter: brightness(var(--press-brightness));
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        /* Ripple effect */
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.3);
+            transform: scale(0);
+            animation: ripple 0.6s linear;
+            pointer-events: none;
+        }
+
+        @keyframes ripple {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
         }
 
         @media (max-width: 500px) {
             .button-grid {
-                grid-template-columns: 1fr 1fr;
-                max-width: 90vw;
+                gap: 14px;
             }
 
             button {
                 font-size: 1rem;
-                height: 50px;
-                user-select: none;
-                -webkit-user-select: none;
-                -ms-user-select: none;
-                -moz-user-select: none;
+                height: 55px;
+                padding: 14px 0;
             }
-
-            h1 {
-                font-size: 1.4rem;
+            
+            /* Disable hover effects on touch devices */
+            @media (hover: none) {
+                button:hover {
+                    background: var(--button-bg);
+                    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+                }
             }
         }
     </style>
 </head>
-
 <body>
-    <h1>Servo Control Panel</h1>
+    <h1>Servo Motor Control</h1>
     <div class="button-grid">
         <button id="moonwalk-button">Moonwalk</button>
         <button id="dance-button">Dance</button>
         <button id="left-button">Left Swing</button>
         <button id="right-button">Right Swing</button>
-        <button id="walkleft-button">Walk left</button>
-        <button id="walkright-button">Walk right</button>
+        <button id="walkleft-button">Walk Left</button>
+        <button id="walkright-button">Walk Right</button>
     </div>
-</body>
 
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script>
+        document.querySelectorAll('button').forEach(button => {
+            // Touch start handler
+            button.addEventListener('touchstart', function(e) {
+                this.classList.add('touch-active');
+                
+                // Create ripple effect
+                const ripple = document.createElement('span');
+                ripple.classList.add('ripple');
+                this.appendChild(ripple);
+                
+                // Position ripple
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                ripple.style.width = ripple.style.height = `${size}px`;
+                ripple.style.left = `${e.touches[0].clientX - rect.left - size/2}px`;
+                ripple.style.top = `${e.touches[0].clientY - rect.top - size/2}px`;
+                
+                // Remove ripple after animation
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+            
+            // Touch end handler
+            button.addEventListener('touchend', function() {
+                this.classList.remove('touch-active');
+            });
+            
+            // Mouse click handler
+            button.addEventListener('mousedown', function(e) {
+                this.classList.add('touch-active');
+                
+                // Create ripple effect
+                const ripple = document.createElement('span');
+                ripple.classList.add('ripple');
+                this.appendChild(ripple);
+                
+                // Position ripple
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                ripple.style.width = ripple.style.height = `${size}px`;
+                ripple.style.left = `${e.clientX - rect.left - size/2}px`;
+                ripple.style.top = `${e.clientY - rect.top - size/2}px`;
+                
+                // Remove ripple after animation
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+            
+            button.addEventListener('mouseup', function() {
+                this.classList.remove('touch-active');
+            });
+            
+            button.addEventListener('mouseleave', function() {
+                this.classList.remove('touch-active');
+            });
+            
+            // Click action handler
+            button.addEventListener('click', function() {
+                const action = this.id.replace('-button', '');
+                console.log(`Action triggered: ${action}`);
+                // Add your control logic here
+            });
+        });
+    </script>
+</body>
 </html>

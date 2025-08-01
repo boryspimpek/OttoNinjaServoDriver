@@ -39,7 +39,7 @@ def set_servo(nazwa, kat):
     else:
         print("Error:", r.status_code, r.text)
 
-def move_servo(servos, ends, steps=10, delay_time=0.001):
+def move_servo(servos, ends, steps=3, delay_time=0.002):
     starts = [current_pos[servo] for servo in servos]
     diffs = [end - start for start, end in zip(starts, ends)]
     for i in range(steps + 1):
@@ -51,7 +51,7 @@ def move_servo(servos, ends, steps=10, delay_time=0.001):
     for idx, servo in enumerate(servos):
         current_pos[servo] = ends[idx]
 
-def return_to_neutral(servos, steps=10, delay_time=0.001):
+def return_to_neutral(servos, steps=3, delay_time=0.002):
     ends = [neutral_pos[servo] for servo in servos]
     move_servo(servos, ends, steps, delay_time)
 
@@ -85,10 +85,3 @@ def right_walk():
     set_servo(RF, 90 - 10)
     time.sleep(0.7)
     stop_swing()
-
-
-# while True:
-#     left_walk()
-#     time.sleep(0.5)
-#     right_walk()
-#     time.sleep(0.5)
