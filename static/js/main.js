@@ -7,37 +7,56 @@ document.addEventListener('DOMContentLoaded', () => {
     const rightBtn = document.getElementById('right-button');
     const moonwalkBtn = document.getElementById('moonwalk-button');
     const danceBtn = document.getElementById('dance-button');
-    const walkleftBtn = document.getElementById('walkleft-button');
-    const walkrightBtn = document.getElementById('walkright-button');
+    const walkleftBtnForward = document.getElementById('walkleftForward-button');
+    const walkrightBtnForward = document.getElementById('walkrightForward-button');
+    const walkleftBtnBack = document.getElementById('walkleftBack-button');
+    const walkrightBtnBack = document.getElementById('walkrightBack-button');
+    const walkBtn = document.getElementById('walk-button');
+    const stopwalkBtn = document.getElementById('stopwalk-button');
 
     if (leftBtn) {
         leftBtn.addEventListener('mousedown', () => sendRequest('/leftswing/start'));
-        leftBtn.addEventListener('mouseup', () => sendRequest('/stopswing'));
+        leftBtn.addEventListener('mouseup', () => sendRequest('/stopwalk'));
         leftBtn.addEventListener('touchstart', () => sendRequest('/leftswing/start'));
-        leftBtn.addEventListener('touchend', () => sendRequest('/stopswing'));
+        leftBtn.addEventListener('touchend', () => sendRequest('/stopwalk'));
     }
 
     if (rightBtn) {
         rightBtn.addEventListener('mousedown', () => sendRequest('/rightswing/start'));
-        rightBtn.addEventListener('mouseup', () => sendRequest('/stopswing'));
+        rightBtn.addEventListener('mouseup', () => sendRequest('/stopwalk'));
         rightBtn.addEventListener('touchstart', () => sendRequest('/rightswing/start'));
-        rightBtn.addEventListener('touchend', () => sendRequest('/stopswing'));
+        rightBtn.addEventListener('touchend', () => sendRequest('/stopwalk'));
     }
 
     if (moonwalkBtn) {
-        moonwalkBtn.addEventListener('click', () => sendRequest('/moonwalk'));
+        moonwalkBtn.addEventListener('click', () => sendRequest('/startmoonwalk'));
     }
 
     if (danceBtn) {
-        danceBtn.addEventListener('click', () => sendRequest('/dance'));
+        danceBtn.addEventListener('click', () => sendRequest('/startdance'));
     }
 
-    if (walkleftBtn) {
-        walkleftBtn.addEventListener('click', () => sendRequest('/walkleft'));
+    if (walkleftBtnForward) {
+        walkleftBtnForward.addEventListener('click', () => sendRequest('/walkleftForward'));
     }
 
-    if (walkrightBtn) {
-        walkrightBtn.addEventListener('click', () => sendRequest('/walkright'));
+    if (walkrightBtnForward) {
+        walkrightBtnForward.addEventListener('click', () => sendRequest('/walkrightForward'));
+    }
+
+    if (walkleftBtnBack) {
+        walkleftBtnBack.addEventListener('click', () => sendRequest('/walkleftBack'));
+    }
+
+    if (walkrightBtnBack) {
+        walkrightBtnBack.addEventListener('click', () => sendRequest('/walkrightBack'));
+    }
+
+    if (walkBtn) {
+        walkBtn.addEventListener('click', () => sendRequest('/startwalk'));
+    }
+    if (stopwalkBtn) {
+        stopwalkBtn.addEventListener('click', () => sendRequest('/stopwalk'));
     }
 
 });
