@@ -28,6 +28,11 @@ Think of it as:
 Wemos = Muscles, 
 Python = Brain
 
+## Disclaimer
+
+⚠️ Disclaimer
+I’m just a hobbyist and self-taught developer. This project is a personal experiment and learning journey, so please keep in mind that the code and design might not follow professional standards. Use it as inspiration or a starting point rather than a polished, production-ready solution.
+
 ## Hardware Setup
 
 | Component   | Description                              |
@@ -36,7 +41,7 @@ Python = Brain
 | Servos     | 2x Positional (LL, RL), 2x Continuous (LF, RF) |
 | Power      | 5V                                       |
 
-### Wiring Diagram
+## Wiring Diagram
 
 | Servo | ESP8266 Pin |
 |-------|-------------|
