@@ -106,8 +106,9 @@ Open your browser and navigate to:
 
 ---
 
-![Robot in action](images/screenshot.png)
+#### Default Controll Panel
 
+![Robot in action](images/screenshot.png)
 
 #### Running on Android (Termux)
 
