@@ -69,7 +69,7 @@ const char* password = "YOUR_PASSWORD";
 ```
 
 - Upload the code to your Wemos D1 Mini
-
+- Read IP adress of your Wemos D1 Mini from serial monitor
 ---
 
 ### 2. Python Control Script
@@ -102,8 +102,9 @@ Install required dependencies:
 ```bash
 pip install -r requirements.txt
 ```
+- Enter IP adress of your Wemos D1 mini at the top of servos.py file
 
-Run the web control interface:
+- Run the web control interface:
 
 ```bash
 python3 app.py
