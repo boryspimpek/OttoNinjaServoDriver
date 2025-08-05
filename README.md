@@ -106,6 +106,17 @@ Open your browser and navigate to:
 
 ---
 
+#### Running on Android (Termux)
+
+You can also run the Python control script on your Android phone using [Termux](https://termux.dev/en/):
+
+1. Install Termux from F-Droid or Google Play.
+2. In Termux, install Python:
+   ```bash
+   pkg install python
+   ```
+3. Clone this repository and follow the standard installation steps.
+
 ## Project Structure
 
 ```
