@@ -42,9 +42,9 @@ Python = Brain
 | RL    | D5          |
 | RF    | D6          |
 
-![Robot in action](images/2.png)
+![Robot in action](images/2.jpg)
 
-![Robot in action](images/3.png)
+![Robot in action](images/3.jpg)
 
 
 ## Installation
