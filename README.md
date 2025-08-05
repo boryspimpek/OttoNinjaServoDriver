@@ -2,6 +2,9 @@
 
 A compact bipedal robot powered by **ESP8266 (Wemos D1 Mini)** and controlled via WiFi using **Python**.
 
+![Robot in action](images/4.jpg)
+
+
 ## Features
 
 - 📡 **WiFi Control (UDP)** — Operate the robot from any device running Linux/Python on the same network.
