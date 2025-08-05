@@ -106,6 +106,9 @@ Open your browser and navigate to:
 
 ---
 
+![Robot in action](images/screenshot.png)
+
+
 #### Running on Android (Termux)
 
 You can also run the Python control script on your Android phone using [Termux](https://termux.dev/en/):
