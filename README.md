@@ -1,4 +1,4 @@
-# Bipedal WiFi-Controlled Robot (ESP8266 + Python)
+# WiFi-Controlled Robot (ESP8266 + Python)
 
 A compact bipedal robot powered by **ESP8266 (Wemos D1 Mini)** and controlled via WiFi using **Python**.
 
