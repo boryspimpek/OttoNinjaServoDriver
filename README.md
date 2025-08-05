@@ -8,6 +8,23 @@ A compact bipedal robot powered by **ESP8266 (Wemos D1 Mini)** and controlled vi
 - 🐍 **Python API** — Easy-to-use control functions for motion and behavior.
 - 🔌 **Simple Wiring** — Minimalistic setup using 4 servos.
 
+## Project concept
+
+🧠 Project Concept
+The core idea behind this project is to offload all servo control to the ESP8266, while keeping the entire decision-making and logic layer in Python.
+
+This architecture brings a few key benefits:
+
+⚡ Fast development – You can modify and test your Python logic instantly, without reflashing the microcontroller.
+
+🧠 Separation of concerns – The ESP8266 acts purely as a low-level actuator controller (“muscles”), while Python handles the higher-level behavior and intelligence (“brain”).
+
+🔄 Flexible updates – All changes to walking patterns, movement sequences, or reactions can be done from the Python side.
+
+Think of it as:
+Wemos = Muscles
+Python = Brain
+
 ## Hardware Setup
 
 | Component   | Description                              |
