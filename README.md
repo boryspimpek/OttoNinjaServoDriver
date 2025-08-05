@@ -106,6 +106,22 @@ Open your browser and navigate to:
 
 ---
 
+## Project Structure
+
+```
+OttoNinjaServoDriver/
+├── app.py
+├── servo.py
+├── static/
+│   └── js/
+│       └── main.js
+└── templates/
+│   └── index.html
+└── README.md
+```
+
+---
+
 ## License
 
 This project is open source.
