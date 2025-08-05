@@ -45,6 +45,8 @@ const char* password = "YOUR_PASSWORD";
 
 - Upload the code to your Wemos D1 Mini
 
+- Read from serial monitor IP adress of your esp8266
+
 ---
 
 ### 2. Python Control Script
@@ -61,6 +63,7 @@ Install the required dependencies if needed:
 ```bash
 pip install -r requirements.txt
 ```
+Enter correct IP adress of your esp8266
 
 Run the web control interface:
 
