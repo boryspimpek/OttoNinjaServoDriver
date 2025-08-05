@@ -22,7 +22,7 @@ This architecture brings a few key benefits:
 🔄 Flexible updates – All changes to walking patterns, movement sequences, or reactions can be done from the Python side.
 
 Think of it as:
-Wemos = Muscles
+Wemos = Muscles, 
 Python = Brain
 
 ## Hardware Setup
