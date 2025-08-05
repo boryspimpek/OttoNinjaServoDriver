@@ -42,11 +42,10 @@ Python = Brain
 | RL    | D5          |
 | RF    | D6          |
 
-| Battery | ESP8266 Pin |
-|_________|_____________|
-| +       | %V          |
-| -       | GND         |
- 
+![Robot in action](images/2.png)
+
+![Robot in action](images/3.png)
+
 
 ## Installation
 
