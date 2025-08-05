@@ -110,15 +110,21 @@ Open your browser and navigate to:
 
 ```
 OttoNinjaServoDriver/
-├── app.py
-├── servo.py
+├── app.py                # Serwer Flask – łączy logikę Python z panelem webowym, obsługuje żądania HTTP
+├── servo.py              # Tutaj definiujesz wszystkie funkcje ruchów i sekwencji robota (np. chód, taniec, moonwalk)
 ├── static/
 │   └── js/
-│       └── main.js
-└── templates/
-│   └── index.html
+│       └── main.js       # Skrypt JavaScript obsługujący interakcje na stronie (np. wysyłanie żądań po kliknięciu przycisków)
+├── templates/
+│   └── index.html        # Strona internetowa – panel kontrolny robota; tu możesz dodawać nowe przyciski dla kolejnych akcji
+├── requirements.txt      # Lista wymaganych bibliotek Pythona
 └── README.md
 ```
+
+- **servo.py** – definiuj tutaj wszystkie funkcje ruchów i sekwencji robota. Każdy nowy ruch lub zachowanie powinien być zaimplementowany jako osobna funkcja w tym pliku.
+- **app.py** – serwer Flask, który udostępnia panel webowy i mapuje przyciski na stronie na odpowiednie funkcje z `servo.py`.
+- **templates/index.html** – panel kontrolny robota dostępny przez przeglądarkę. Możesz tu dodawać nowe przyciski, które będą wywoływać nowe akcje.
+- **static/js/main.js** – obsługuje logikę po stronie przeglądarki, np. wysyłanie żądań do serwera po kliknięciu przycisków.
 
 ---
 
