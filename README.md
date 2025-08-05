@@ -45,7 +45,7 @@ const char* password = "YOUR_PASSWORD";
 
 - Upload the code to your Wemos D1 Mini
 
-- Read from serial monitor IP adress of your esp8266
+- Read from serial monitor IP adress of your Wemos D1 Mini
 
 ---
 
@@ -63,7 +63,7 @@ Install the required dependencies if needed:
 ```bash
 pip install -r requirements.txt
 ```
-Enter correct IP adress of your esp8266
+Enter correct IP adress of your Wemos D1 Mini at the top of the servos.py file
 
 Run the web control interface:
 
