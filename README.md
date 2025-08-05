@@ -42,6 +42,12 @@ Python = Brain
 | RL    | D5          |
 | RF    | D6          |
 
+| Battery | ESP8266 Pin |
+|_________|_____________|
+| +       | %V          |
+| -       | GND         |
+ 
+
 ## Installation
 
 ### 1. Flash ESP8266 Firmware
