@@ -110,21 +110,21 @@ Open your browser and navigate to:
 
 ```
 OttoNinjaServoDriver/
-├── app.py                # Serwer Flask – łączy logikę Python z panelem webowym, obsługuje żądania HTTP
-├── servo.py              # Tutaj definiujesz wszystkie funkcje ruchów i sekwencji robota (np. chód, taniec, moonwalk)
+├── app.py                # Flask server – connects Python logic with the web panel, handles HTTP requests
+├── servo.py              # Here you define all robot movement and sequence functions (e.g. walk, dance, moonwalk)
 ├── static/
 │   └── js/
-│       └── main.js       # Skrypt JavaScript obsługujący interakcje na stronie (np. wysyłanie żądań po kliknięciu przycisków)
+│       └── main.js       # JavaScript script handling interactions on the page (e.g. sending requests when buttons are clicked)
 ├── templates/
-│   └── index.html        # Strona internetowa – panel kontrolny robota; tu możesz dodawać nowe przyciski dla kolejnych akcji
-├── requirements.txt      # Lista wymaganych bibliotek Pythona
+│   └── index.html        # Web page – robot control panel; you can add new buttons here for additional actions
+├── requirements.txt      # List of required Python libraries
 └── README.md
 ```
 
-- **servo.py** – definiuj tutaj wszystkie funkcje ruchów i sekwencji robota. Każdy nowy ruch lub zachowanie powinien być zaimplementowany jako osobna funkcja w tym pliku.
-- **app.py** – serwer Flask, który udostępnia panel webowy i mapuje przyciski na stronie na odpowiednie funkcje z `servo.py`.
-- **templates/index.html** – panel kontrolny robota dostępny przez przeglądarkę. Możesz tu dodawać nowe przyciski, które będą wywoływać nowe akcje.
-- **static/js/main.js** – obsługuje logikę po stronie przeglądarki, np. wysyłanie żądań do serwera po kliknięciu przycisków.
+- **servo.py** – define all robot movement and sequence functions here. Every new movement or behavior should be implemented as a separate function in this file.
+- **app.py** – Flask server that provides the web panel and maps buttons on the page to the appropriate functions from `servo.py`.
+- **templates/index.html** – robot control panel accessible via browser. You can add new buttons here to trigger new actions.
+- **static/js/main.js** – handles browser-side logic, e.g. sending requests to the server when buttons are clicked.
 
 ---
 
