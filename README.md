@@ -132,7 +132,7 @@ Open your browser and navigate to:
 
 ## Default Controll Panel
 
-![Robot in action](images/screenshot.png)
+![Robot in action](images/6.jpg)
 
 ## Running on Android (Termux)
 
