@@ -126,13 +126,12 @@ python3 app.py
 Open your browser and navigate to:  
 [http://127.0.0.1:5000](http://127.0.0.1:5000)
 
----
 
-### Default Controll Panel
+## Default Controll Panel
 
 ![Robot in action](images/screenshot.png)
 
-### Running on Android (Termux)
+## Running on Android (Termux)
 
 You can also run the Python control script on your Android phone using [Termux](https://termux.dev/en/):
 
