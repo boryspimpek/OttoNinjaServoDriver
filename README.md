@@ -96,18 +96,6 @@ To avoid conflicts with other Python packages, it's recommended to use a virtual
 ```bash
 # Create a new virtual environment
 python3 -m venv venv
-
-# Activate the environment:
-# On Linux/macOS:
-source venv/bin/activate
-
-# On Windows:
-venv\Scripts\activate
-```
-
-```bash
-# Create a new virtual environment
-python3 -m venv venv
 ```
 
 ```bash
