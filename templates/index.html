@@ -91,6 +91,36 @@
             overflow: hidden;
         }
 
+        .section-header {
+            display: grid;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--header-color);
+            font-size: 1.1rem;
+            text-align: center;
+            text-transform: uppercase;
+            opacity: 0.85;
+        }
+
+        .section-header.two-columns {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .column-title {
+            padding: 5px 0;
+        }
+
+        .section-title {
+            margin: 40px 0 14px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-align: center;
+            text-transform: uppercase;
+            color: var(--header-color);
+            opacity: 0.9;
+        }
+
+
         button:hover {
             background: var(--button-hover);
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
@@ -124,7 +154,7 @@
             .button-container {
                 gap: 14px;
             }
-            
+
             .button-row {
                 gap: 14px;
             }
@@ -149,22 +179,30 @@
 <body>
     <h1>OTTO NINJA </h1>
     <div class="button-container">
-        <!-- First 3 rows with 2 buttons each -->
+        <!-- SECTION: LEFT LEG / RIGHT LEG -->
+        <div class="section-header two-columns">
+            <span class="column-title">LEFT LEG</span>
+            <span class="column-title">RIGHT LEG</span>
+        </div>
+
         <div class="button-row two-columns">
             <button id="swingleft-button">Swing</button>
             <button id="swingright-button">Swing</button>
         </div>
-        
+
         <div class="button-row two-columns">
             <button id="walkleftForward-button">Step Forward</button>
             <button id="walkrightForward-button">Step Forward</button>
         </div>
-        
+
         <div class="button-row two-columns">
             <button id="walkleftBack-button">Step Back</button>
             <button id="walkrightBack-button">Step Back</button>
         </div>
-        
+
+        <!-- SECTION: SPECIAL MOVES -->
+        <h2 class="section-title">SPECIAL MOVES</h2>
+
         <!-- Remaining rows with 4 buttons each -->
         <div class="button-row four-columns">
             <button id="walk-button">Walk</button>
@@ -172,14 +210,14 @@
             <button id="moonwalk-button">Moonwalk</button>
             <button id="balerina-button">Balerina</button>
         </div>
-        
+
         <div class="button-row four-columns">
             <button id="steps-button">Steps</button>
             <button id="waddle-button">Waddle</button>
             <button id="boogie-button">Boogie</button>
             <button id="drink-button">Drink</button>
         </div>
-        
+
         <div class="button-row four-columns">
             <button id="dance-button">Dance</button>
             <button id="dance-button">Dance</button>
