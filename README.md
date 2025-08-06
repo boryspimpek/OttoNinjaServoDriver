@@ -105,6 +105,23 @@ source venv/bin/activate
 venv\Scripts\activate
 ```
 
+```bash
+# Create a new virtual environment
+python3 -m venv venv
+```
+
+```bash
+# Activate the environment:
+# On Linux/macOS:
+source venv/bin/activate
+```
+
+```bash
+# Activate the environment:
+# On Windows:
+venv\Scripts\activate
+```
+
 Install required dependencies:
 
 ```bash
