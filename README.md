@@ -93,20 +93,20 @@ cd OttoNinjaServoDriver
 
 To avoid conflicts with other Python packages, it's recommended to use a virtual environment:
 
-```bash
 # Create a new virtual environment
+```bash
 python3 -m venv venv
 ```
 
-```bash
 # Activate the environment:
 # On Linux/macOS:
+```bash
 source venv/bin/activate
 ```
 
-```bash
 # Activate the environment:
 # On Windows:
+```bash
 venv\Scripts\activate
 ```
 
@@ -115,7 +115,12 @@ Install required dependencies:
 ```bash
 pip install -r requirements.txt
 ```
+
 - Enter IP adress of your Wemos D1 mini at the top of servos.py file
+
+```bash
+nano servo.py
+```
 
 - Run the web control interface:
 
