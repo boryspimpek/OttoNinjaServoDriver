@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const leftBtn = document.getElementById('left-button');
     const rightBtn = document.getElementById('right-button');
     const moonwalkBtn = document.getElementById('moonwalk-button');
-    const danceBtn = document.getElementById('dance-button');
+    const stepsBtn = document.getElementById('steps-button');
     const walkleftBtnForward = document.getElementById('walkleftForward-button');
     const walkrightBtnForward = document.getElementById('walkrightForward-button');
     const walkleftBtnBack = document.getElementById('walkleftBack-button');
@@ -32,8 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
         moonwalkBtn.addEventListener('click', () => sendRequest('/startmoonwalk'));
     }
 
-    if (danceBtn) {
-        danceBtn.addEventListener('click', () => sendRequest('/startdance'));
+    if (stepsBtn) {
+        stepsBtn.addEventListener('click', () => sendRequest('/startsteps'));
     }
 
     if (walkleftBtnForward) {

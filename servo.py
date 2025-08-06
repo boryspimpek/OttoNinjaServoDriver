@@ -124,3 +124,29 @@ def right_walk_back():
     move_servo({RF: 102})
     time.sleep(1)
     return_to_neutral()
+
+def moonwalk(delay=0.4):
+    move_servo({LL: 105, RL: 180})  
+    time.sleep(delay)
+    move_servo({RL: 85})
+    time.sleep(delay)
+    move_servo({RL: 180})
+    time.sleep(delay)
+    move_servo({LL: 5, RL: 85}) 
+    time.sleep(delay)
+    move_servo({LL: 102})
+    time.sleep(delay)
+    move_servo({LL: 5})
+    time.sleep(delay)
+    return_to_neutral()
+
+
+def steps(delay=0.5):
+    for i in range(3):
+        move_servo({LL: 35, RL: 80})
+        time.sleep(delay)  
+        move_servo({LL: 105, RL: 145})
+        time.sleep(delay)
+    
+    return_to_neutral()
+

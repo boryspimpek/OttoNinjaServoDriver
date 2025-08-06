@@ -2,7 +2,7 @@ from flask import Flask, render_template, jsonify
 import threading
 from servo import (
     return_to_neutral, left_swing, right_swing,
-    left_walk_forward, right_walk_forward, walk, LL, LF, RL, RF, left_walk_back, right_walk_back
+    left_walk_forward, right_walk_forward, walk, LL, LF, RL, RF, left_walk_back, right_walk_back, moonwalk, steps
 )
 
 app = Flask(__name__)
@@ -22,10 +22,10 @@ def startmoonwalk():
     return jsonify({'status': 'startedmoonwalk'})
 
 # Dance: jedno kliknięcie
-@app.route('/startdance')
-def startdance():
-    threading.Thread(target=dance).start()
-    return jsonify({'status': 'starteddance'})
+@app.route('/startsteps')
+def startsteps():
+    threading.Thread(target=steps).start()
+    return jsonify({'status': 'startedsteps'})
 
 # Walk left
 @app.route('/walkleftForward')

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OTTO NINJA</title>
+    <title>Servo Control Panel</title>
     <style>
         :root {
             --button-bg: #3498db;
@@ -46,27 +46,13 @@
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
 
-        .button-container {
-            display: flex;
-            flex-direction: column;
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
             gap: 18px;
             margin-top: 30px;
             width: 100%;
-            max-width: min(720px, 90vw);
-        }
-
-        .button-row {
-            display: grid;
-            gap: 18px;
-            width: 100%;
-        }
-
-        .button-row.two-columns {
-            grid-template-columns: repeat(2, 1fr);
-        }
-
-        .button-row.four-columns {
-            grid-template-columns: repeat(4, 1fr);
+            max-width: min(360px, 90vw);
         }
 
         button {
@@ -121,11 +107,7 @@
         }
 
         @media (max-width: 500px) {
-            .button-container {
-                gap: 14px;
-            }
-            
-            .button-row {
+            .button-grid {
                 gap: 14px;
             }
 
@@ -147,45 +129,34 @@
 </head>
 
 <body>
-    <h1>OTTO NINJA </h1>
-    <div class="button-container">
-        <!-- First 3 rows with 2 buttons each -->
-        <div class="button-row two-columns">
-            <button id="left-button">Swing</button>
-            <button id="right-button">Swing</button>
-        </div>
-        
-        <div class="button-row two-columns">
-            <button id="walkleftForward-button">Walk Forward</button>
-            <button id="walkrightForward-button">Walk Forward</button>
-        </div>
-        
-        <div class="button-row two-columns">
-            <button id="walkleftBack-button">Walk Back</button>
-            <button id="walkrightBack-button">Walk Back</button>
-        </div>
-        
-        <!-- Remaining rows with 4 buttons each -->
-        <div class="button-row four-columns">
-            <button id="walk-button">Walk</button>
-            <button id="moonwalk-button">Moonwalk</button>
-            <button id="steps-button">Steps</button>
-            <button id="dance-button">Dance</button>
-        </div>
-        
-        <div class="button-row four-columns">
-            <button id="dance-button">Dance</button>
-            <button id="dance-button">Dance</button>
-            <button id="dance-button">Dance</button>
-            <button id="dance-button">Dance</button>
-        </div>
-        
-        <div class="button-row four-columns">
-            <button id="dance-button">Dance</button>
-            <button id="dance-button">Dance</button>
-            <button id="dance-button">Dance</button>
-            <button id="dance-button">Dance</button>
-        </div>
+    <h1>Servo Motor Control</h1>
+    <div class="button-grid">
+
+        <button id="left-button">Left Swing</button>
+        <button id="right-button">Right Swing</button>
+
+        <button id="walkleftForward-button">Walk Forward</button>
+        <button id="walkrightForward-button">Walk Forward</button>
+
+        <button id="walkleftBack-button">Walk Back</button>
+        <button id="walkrightBack-button">Walk Back</button>
+
+        <button id="walk-button">Walk</button>
+        <button id="stopwalk-button">Stop Walk</button>
+        <button id="moonwalk-button">Moonwalk</button>
+        <button id="dance-button">Dance</button>
+        <button id="dance-button">Dance</button>
+        <button id="dance-button">Dance</button>
+        <button id="dance-button">Dance</button>
+        <button id="dance-button">Dance</button>
+        <button id="dance-button">Dance</button>
+        <button id="dance-button">Dance</button>
+        <button id="dance-button">Dance</button>
+        <button id="dance-button">Dance</button>
+        <button id="dance-button">Dance</button>
+
+
+
     </div>
 
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
