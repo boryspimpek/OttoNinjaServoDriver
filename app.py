@@ -1,8 +1,8 @@
 from flask import Flask, render_template, jsonify
 import threading
 from servo import (
-    return_to_neutral, left_swing, right_swing,
-    left_walk_forward, right_walk_forward, walk, LL, LF, RL, RF, left_walk_back, right_walk_back, moonwalk, steps
+    return_to_neutral, left_swing, right_swing, left_walk_forward, right_walk_forward, 
+    walk, left_walk_back, right_walk_back, moonwalk, steps, balerina, weird, waddle, boogie, drink
 )
 
 app = Flask(__name__)
@@ -51,6 +51,12 @@ def rightwalkBack():
     threading.Thread(target=right_walk_back).start()
     return jsonify({'status': 'rightwalkingback'})
 
+# walk
+@app.route('/startwalk')
+def startwalk():
+    threading.Thread(target=walk).start()
+    return jsonify({'status': 'startedwalk'})
+
 # Swing left
 @app.route('/leftswing/start')
 def leftswing_start():
@@ -63,16 +69,35 @@ def rightswing_start():
     threading.Thread(target=right_swing).start()
     return jsonify({'status': 'rightswinging'})
 
-@app.route('/startwalk')
-def startwalk():
-    global walk_thread, walk_stop_flag
-    if walk_thread is None or not walk_thread.is_alive():
-        walk_stop_flag.clear()
-        walk_thread = threading.Thread(target=walk, args=(walk_stop_flag,))
-        walk_thread.start()
-        return jsonify({'status': 'walk started'})
-    else:
-        return jsonify({'status': 'walk already running'})
+# Balerina
+@app.route('/startbalerina')
+def startbalerina():
+    threading.Thread(target=balerina).start()
+    return jsonify({'status': 'startedbalerina'})
+
+# Weird dance
+@app.route('/startweird')
+def startweird():
+    threading.Thread(target=weird).start()
+    return jsonify({'status': 'startedweird'})
+
+# Waddle dance
+@app.route('/startwaddle')
+def startwaddle():
+    threading.Thread(target=waddle).start()
+    return jsonify({'status': 'startedwaddle'})
+
+# Boogie dance
+@app.route('/startboogie')
+def startboogie():
+    threading.Thread(target=boogie).start()
+    return jsonify({'status': 'startedboogie'})
+
+# Drink dance
+@app.route('/startdrink')
+def startdrink():
+    threading.Thread(target=drink).start()
+    return jsonify({'status': 'starteddrink'})
 
 @app.route('/stopwalk')
 def stopwalk():

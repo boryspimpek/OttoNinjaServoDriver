@@ -1,5 +1,6 @@
 import socket
 import time
+import random
 
 UDP_IP = "192.168.0.144"  # Adres IP ESP8266
 UDP_PORT = 4210
@@ -71,16 +72,10 @@ def return_to_neutral():
         RF: RFN
     }
 
-def walk(stop_flag=None):
-    return_to_neutral()
-
+def walk():
     for i in range(4):
-        if stop_flag and stop_flag.is_set():
-            break
         left_walk_forward()
         time.sleep(0.1)
-        if stop_flag and stop_flag.is_set():
-            break
         right_walk_forward()
         time.sleep(0.1)
     return_to_neutral()
@@ -148,5 +143,82 @@ def steps(delay=0.5):
         move_servo({LL: 105, RL: 145})
         time.sleep(delay)
     
+    return_to_neutral()
+
+def waddle(delay=0.5):
+    for i in range(3):
+        move_servo({LL: 105, RL: 180})  
+        time.sleep(delay)
+        move_servo({LL: 5, RL: 85}) 
+        time.sleep(delay)
+    return_to_neutral()
+
+def balerina():
+    move_servo({LL: 105, RL: 180})  
+    time.sleep(0.2)
+    move_servo({LF: 102})    
+    time.sleep(0.2)        
+    
+    for i in range(4):
+        move_servo({RL: 100})
+        time.sleep(0.4)
+        move_servo({RL: 180})
+        time.sleep(0.4)
+    return_to_neutral()
+    time.sleep(0.2)
+
+    move_servo({LL: 5, RL: 85})
+    time.sleep(0.2)
+    move_servo({RF: 81})
+    time.sleep(0.2)
+
+    for i in range(4):
+        move_servo({LL: 80})
+        time.sleep(0.4)
+        move_servo({LL: 5})
+        time.sleep(0.4)
+    return_to_neutral()
+    time.sleep(0.2)
+
+def weird(iterations=5):
+    for _ in range(iterations):
+        lf_speed = random.choice([72, 112])
+        rf_speed = random.choice([72, 112])
+        move_servo({LF: lf_speed, RF: rf_speed})
+        time.sleep(1)
+    return_to_neutral()
+
+def boogie(delay=0.3):
+    left_walk_forward()
+    time.sleep(delay)
+    right_walk_back()
+    time.sleep(delay)
+    left_walk_back()
+    time.sleep(delay)
+    right_walk_forward()
+    time.sleep(delay)
+    return_to_neutral()
+
+def drink():
+    move_servo({LL: 35, RL: 80})
+    time.sleep(0.5)
+    move_servo({LF: 112})
+    time.sleep(0.5)
+
+    move_servo({LL: 105, RL: 145})
+    time.sleep(0.5)
+    move_servo({LF: 78})
+    time.sleep(0.5)
+
+    move_servo({LL: 35, RL: 80})
+    time.sleep(0.5)
+    move_servo({LF: 78})
+    time.sleep(0.5)
+
+    move_servo({LL: 105, RL: 145})
+    time.sleep(0.5)
+    move_servo({LF: 102})
+    time.sleep(0.5)
+
     return_to_neutral()
 
