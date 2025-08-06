@@ -119,6 +119,8 @@ pip install -r requirements.txt
 ```bash
 nano servo.py
 ```
+ctrl + o -> to save file  
+ctrl + x -> to exit file
 
 - Run the web control interface:
 
