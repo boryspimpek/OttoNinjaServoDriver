@@ -98,14 +98,12 @@ To avoid conflicts with other Python packages, it's recommended to use a virtual
 python3 -m venv venv
 ```
 
-# Activate the environment:
-# On Linux/macOS:
+- Activate the environment: On Linux/macOS:
 ```bash
 source venv/bin/activate
 ```
 
-# Activate the environment:
-# On Windows:
+- Activate the environment: On Windows:
 ```bash
 venv\Scripts\activate
 ```
