@@ -82,8 +82,12 @@ Clone the Python control repository:
 
 ```bash
 git clone https://github.com/boryspimpek/OttoNinjaServoDriver.git
+```
+
+```bash
 cd OttoNinjaServoDriver
 ```
+
 
 #### ✅ Recommended: Use a virtual environment
 
