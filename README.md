@@ -53,6 +53,11 @@ Python = Brain
 
 ![Robot in action](images/3.jpg)
 
+## 🎬 Demo Video
+
+You can watch the full step-by-step setup and live demo here:  
+[![Watch the video](https://img.youtube.com/vi/ZdJvOfch9kk/0.jpg)](https://youtube.com/shorts/ZdJvOfch9kk)
+
 
 ## Installation
 
