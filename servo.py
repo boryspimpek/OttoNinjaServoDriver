@@ -2,7 +2,7 @@ import socket
 import time
 import random
 
-UDP_IP = "192.168.0.144"  # Adres IP ESP8266
+UDP_IP = "10.0.0.101"  # Adres IP ESP8266
 UDP_PORT = 4210
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
@@ -156,26 +156,22 @@ def waddle(delay=0.5):
 def balerina():
     move_servo({LL: 105, RL: 180})  
     time.sleep(0.2)
-    move_servo({LF: 102})    
-    time.sleep(0.2)        
     
     for i in range(4):
-        move_servo({RL: 100})
+        move_servo({RL: 100, LF: 102})
         time.sleep(0.4)
-        move_servo({RL: 180})
+        move_servo({RL: 180, LF: 102})
         time.sleep(0.4)
     return_to_neutral()
     time.sleep(0.2)
 
     move_servo({LL: 5, RL: 85})
     time.sleep(0.2)
-    move_servo({RF: 81})
-    time.sleep(0.2)
 
     for i in range(4):
-        move_servo({LL: 80})
+        move_servo({LL: 80, RF: 81})
         time.sleep(0.4)
-        move_servo({LL: 5})
+        move_servo({LL: 5, RF: 81})
         time.sleep(0.4)
     return_to_neutral()
     time.sleep(0.2)
@@ -222,3 +218,7 @@ def drink():
 
     return_to_neutral()
 
+
+balerina()
+
+return_to_neutral()  # Powrót do pozycji neutralnej
