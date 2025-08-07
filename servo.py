@@ -217,8 +217,3 @@ def drink():
     time.sleep(0.5)
 
     return_to_neutral()
-
-
-balerina()
-
-return_to_neutral()  # Powrót do pozycji neutralnej
