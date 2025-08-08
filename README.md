@@ -63,25 +63,11 @@ Many thanks to the original creators for the inspiration and excellent foundatio
 
 ![Robot in action](images/3.jpg)
 
-## 🎬 Demo Video
+## 🎬 Installation Demo Video
 
 You can watch the full step-by-step setup and live demo here:  
 [![Watch the video](https://img.youtube.com/vi/ZdJvOfch9kk/0.jpg)](https://youtube.com/shorts/ZdJvOfch9kk)
 
-## 🚀 Quick Start (One Command)
-
-```bash
-git clone https://github.com/boryspimpek/OttoNinjaServoDriver.git
-```
-```bash
-cd OttoNinjaServoDriver
-```
-```bash
-make install
-```
-```bash
-make run
-```
 
 ## Installation
 
@@ -117,12 +103,11 @@ git clone https://github.com/boryspimpek/OttoNinjaServoDriver.git
 cd OttoNinjaServoDriver
 ```
 
-
 #### ✅ Recommended: Use a virtual environment
 
 To avoid conflicts with other Python packages, it's recommended to use a virtual environment:
 
-# Create a new virtual environment
+##### Create a new virtual environment
 ```bash
 python3 -m venv venv
 ```
@@ -160,6 +145,20 @@ python3 app.py
 Open your browser and navigate to:  
 [http://127.0.0.1:5000](http://127.0.0.1:5000)
 
+## 🚀 Quick Start (One Command)
+
+```bash
+git clone https://github.com/boryspimpek/OttoNinjaServoDriver.git
+```
+```bash
+cd OttoNinjaServoDriver
+```
+```bash
+make install
+```
+```bash
+make run
+```
 
 ## Default Controll Panel
 
