@@ -17,7 +17,7 @@ The core idea behind this project is to offload all servo control to the ESP8266
 
 This architecture brings a few key benefits:
 
-⚡ Fast development – You can modify and test your Python logic instantly, without reflashing the microcontroller.
+Fast development – You can modify and test your Python logic instantly, without reflashing the microcontroller.
 
 Separation of concerns – The ESP8266 acts purely as a low-level actuator controller (“muscles”), while Python handles the higher-level behavior and intelligence (“brain”).
 
@@ -39,7 +39,7 @@ Many thanks to the original creators for the inspiration and excellent foundatio
 
 ## Disclaimer
 
-⚠️ I’m just a hobbyist and self-taught developer. This project is a personal experiment and learning journey, so please keep in mind that the code and design might not follow professional standards. Use it as inspiration or a starting point rather than a polished, production-ready solution.
+I’m just a hobbyist and self-taught developer. This project is a personal experiment and learning journey, so please keep in mind that the code and design might not follow professional standards. Use it as inspiration or a starting point rather than a polished, production-ready solution.
 
 ## Hardware Setup
 
