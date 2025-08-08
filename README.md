@@ -78,17 +78,7 @@ You can watch the full step-by-step setup and live demo here:
 - Open the sketch from this repo:  
   [OttoNinjaServoDriverESP](https://github.com/boryspimpek/OttoNinjaServoDriverESP)
 
-#### Configure your WiFi credentials
-
-Inside the firmware, set your WiFi name and password:
-
-```cpp
-const char* ssid = "YOUR_WIFI";
-const char* password = "YOUR_PASSWORD";
-```
-
 - Upload the code to your Wemos D1 Mini
-- Read IP adress of your Wemos D1 Mini from serial monitor
 ---
 
 ### 2. Python Control Script
@@ -127,14 +117,6 @@ Install required dependencies:
 ```bash
 pip install -r requirements.txt
 ```
-
-- Enter IP adress of your Wemos D1 mini at the top of servos.py file
-
-```bash
-nano servo.py
-```
-ctrl + o -> to save file  
-ctrl + x -> to exit file
 
 - Run the web control interface:
 

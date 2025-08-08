@@ -2,7 +2,7 @@ import socket
 import time
 import random
 
-UDP_IP = "10.0.0.100"  # Adres IP ESP8266
+UDP_IP = "192.168.4.1"  # Adres IP ESP8266
 UDP_PORT = 4210
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
