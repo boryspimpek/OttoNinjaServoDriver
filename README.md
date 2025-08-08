@@ -4,25 +4,25 @@ A compact bipedal robot powered by **ESP8266 (Wemos D1 Mini)** and controlled vi
 
 ![Robot in action](images/5.jpg)
 
-
 ## Features
 
-- 📡 **WiFi Control (UDP)** — Operate the robot from any device running Linux/Python on the same network.
-- 🐍 **Python API** — Easy-to-use control functions for motion and behavior.
-- 🔌 **Simple Wiring** — Minimalistic setup using 4 servos.
+- **Access Point** — ESP8266 creates its own WiFi hotspot for direct connection
+- **WiFi Control (UDP)** — Operate the robot from any device running Linux/Python on the same network.
+- **Python API** — Easy-to-use control functions for motion and behavior.
+- **Simple Wiring** — Minimalistic setup using 4 servos.
 
 ## Project concept
 
-🧠 Project Concept
+Project Concept
 The core idea behind this project is to offload all servo control to the ESP8266, while keeping the entire decision-making and logic layer in Python.
 
 This architecture brings a few key benefits:
 
 ⚡ Fast development – You can modify and test your Python logic instantly, without reflashing the microcontroller.
 
-🧠 Separation of concerns – The ESP8266 acts purely as a low-level actuator controller (“muscles”), while Python handles the higher-level behavior and intelligence (“brain”).
+Separation of concerns – The ESP8266 acts purely as a low-level actuator controller (“muscles”), while Python handles the higher-level behavior and intelligence (“brain”).
 
-🔄 Flexible updates – All changes to walking patterns, movement sequences, or reactions can be done from the Python side.
+Flexible updates – All changes to walking patterns, movement sequences, or reactions can be done from the Python side.
 
 Think of it as:
 Wemos = Muscles, 
@@ -93,11 +93,10 @@ git clone https://github.com/boryspimpek/OttoNinjaServoDriver.git
 cd OttoNinjaServoDriver
 ```
 
-#### ✅ Recommended: Use a virtual environment
+#### Recommended: Use a virtual environment
 
 To avoid conflicts with other Python packages, it's recommended to use a virtual environment:
 
-##### Create a new virtual environment
 ```bash
 python3 -m venv venv
 ```
@@ -117,6 +116,9 @@ Install required dependencies:
 ```bash
 pip install -r requirements.txt
 ```
+
+- Connect to 'OttoNinja' - your Otto Ninja's WiFi access point.
+- Password is: 12345678
 
 - Run the web control interface:
 
