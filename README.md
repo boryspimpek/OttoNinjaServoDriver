@@ -13,7 +13,6 @@ A compact bipedal robot powered by **ESP8266 (Wemos D1 Mini)** and controlled vi
 
 ## Project concept
 
-Project Concept
 The core idea behind this project is to offload all servo control to the ESP8266, while keeping the entire decision-making and logic layer in Python.
 
 This architecture brings a few key benefits:
