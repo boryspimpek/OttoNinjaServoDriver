@@ -145,21 +145,6 @@ python3 app.py
 Open your browser and navigate to:  
 [http://127.0.0.1:5000](http://127.0.0.1:5000)
 
-## 🚀 Quick Start (One Command)
-
-```bash
-git clone https://github.com/boryspimpek/OttoNinjaServoDriver.git
-```
-```bash
-cd OttoNinjaServoDriver
-```
-```bash
-make install
-```
-```bash
-make run
-```
-
 ## Default Controll Panel
 
 ![Robot in action](images/6.jpg)
