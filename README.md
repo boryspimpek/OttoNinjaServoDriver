@@ -68,6 +68,20 @@ Many thanks to the original creators for the inspiration and excellent foundatio
 You can watch the full step-by-step setup and live demo here:  
 [![Watch the video](https://img.youtube.com/vi/ZdJvOfch9kk/0.jpg)](https://youtube.com/shorts/ZdJvOfch9kk)
 
+## 🚀 Quick Start (One Command)
+
+```bash
+git clone https://github.com/boryspimpek/OttoNinjaServoDriver.git
+```
+```bash
+cd OttoNinjaServoDriver
+```
+```bash
+make install
+```
+```bash
+make run
+```
 
 ## Installation
 
