@@ -2,7 +2,7 @@ import socket
 import time
 import random
 
-UDP_IP = "10.0.0.101"  # Adres IP ESP8266
+UDP_IP = "10.0.0.100"  # Adres IP ESP8266
 UDP_PORT = 4210
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
@@ -195,25 +195,53 @@ def boogie(delay=0.3):
     time.sleep(delay)
     return_to_neutral()
 
-def drink():
+def drink(delay=1):
     move_servo({LL: 35, RL: 80})
-    time.sleep(0.5)
+    time.sleep(0.2)
     move_servo({LF: 112})
-    time.sleep(0.5)
+    time.sleep(delay)
 
     move_servo({LL: 105, RL: 145})
-    time.sleep(0.5)
-    move_servo({LF: 78})
-    time.sleep(0.5)
+    time.sleep(0.2)
+    move_servo({RF: 72})
+    time.sleep(0.2)
 
     move_servo({LL: 35, RL: 80})
-    time.sleep(0.5)
+    time.sleep(0.2)
     move_servo({LF: 78})
-    time.sleep(0.5)
+    time.sleep(delay)
 
     move_servo({LL: 105, RL: 145})
+    time.sleep(0.2)
+    move_servo({RF: 132})
+    time.sleep(0.1)
+
+    move_servo({LL: 105, RL: 80})
+    time.sleep(0.2)
+    move_servo({RF: 78})
+    time.sleep(delay)
+
+    move_servo({LL: 35, RL: 80})
+    time.sleep(0.2)
+    move_servo({RF: 78})
+    time.sleep(delay)
+
+    move_servo({LL: 105, RL: 145})
+    time.sleep(0.2)
+    move_servo({RF: 72})
+    time.sleep(0.2)
+
+
+    return_to_neutral()
+
+def circles():
+    move_servo({LL: 170, RL: 25})  
     time.sleep(0.5)
-    move_servo({LF: 102})
-    time.sleep(0.5)
+
+    move_servo({LF: 122, RF: 82})
+    time.sleep(2.5)
+
+    move_servo({LF: 102, RF: 67})
+    time.sleep(3)
 
     return_to_neutral()

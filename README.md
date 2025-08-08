@@ -1,4 +1,4 @@
-# WiFi-Controlled Robot (ESP8266 + Python)
+# Otto Ninja Diy WiFi-Controlled Robot (ESP8266 + Python)
 
 A compact bipedal robot powered by **ESP8266 (Wemos D1 Mini)** and controlled via WiFi using **Python**.
 
@@ -27,6 +27,16 @@ This architecture brings a few key benefits:
 Think of it as:
 Wemos = Muscles, 
 Python = Brain
+
+## Inspiration and Basis of This Project
+
+This project is based on the original [OttoNinja](https://github.com/OttoDIY/OttoNinja) by OttoDIY.  
+I deeply admire the original author for the incredible amount of work and dedication put into that project.
+
+My repository builds upon and customizes those solutions, using the ESP8266 and a custom Wi-Fi servo control implementation.
+
+Many thanks to the original creators for the inspiration and excellent foundation!
+
 
 ## Disclaimer
 
@@ -176,4 +186,11 @@ OttoNinjaServoDriver/
 
 ## License
 
-This project is open source.
+This project is a derivative of [OttoNinja](https://github.com/OttoDIY/OttoNinja) by [OttoDIY](https://www.ottodiy.com) and Sebastian Coddington.  
+It is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).
+
+You are free to use, modify, and redistribute this work, as long as:
+- You give appropriate credit to the original authors.
+- You include a link to the [Otto DIY website](https://www.ottodiy.com) in any redistribution.
+- Any remixes or adaptations are released under the same CC-BY-SA license.
+

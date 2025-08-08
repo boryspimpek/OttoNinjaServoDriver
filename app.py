@@ -2,7 +2,9 @@ from flask import Flask, render_template, jsonify
 import threading
 from servo import (
     return_to_neutral, left_swing, right_swing, left_walk_forward, right_walk_forward, 
-    walk, left_walk_back, right_walk_back, moonwalk, steps, balerina, weird, waddle, boogie, drink
+    walk, left_walk_back, right_walk_back, moonwalk, steps, balerina, 
+    weird, waddle, boogie, drink, 
+    circles
 )
 
 app = Flask(__name__)
@@ -98,6 +100,12 @@ def startboogie():
 def startdrink():
     threading.Thread(target=drink).start()
     return jsonify({'status': 'starteddrink'})
+
+# Circles dance
+@app.route('/startcircles')
+def startcircles():
+    threading.Thread(target=circles).start()
+    return jsonify({'status': 'startedcircles'})
 
 @app.route('/stopwalk')
 def stopwalk():

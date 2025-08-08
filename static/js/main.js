@@ -88,4 +88,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (drinkBtn) {
         drinkBtn.addEventListener('click', () => sendRequest('/startdrink'));
     }
+
+    const circlesBtn = document.getElementById('circles-button');
+    if (circlesBtn) {
+        circlesBtn.addEventListener('click', () => sendRequest('/startcircles'));
+    }
 });
