@@ -74,9 +74,7 @@ You can watch the full step-by-step setup and live demo here:
 
 - Install [Arduino IDE](https://www.arduino.cc/en/software)
 - Add **ESP8266 support** via the Boards Manager (search for "ESP8266")
-- Open the sketch from this repo:  
-  [OttoNinjaServoDriverESP](https://github.com/boryspimpek/OttoNinjaServoDriverESP)
-
+- Open the sketch from esp_files/servo_driver.ino:  
 - Upload the code to your Wemos D1 Mini
 ---
 
@@ -147,6 +145,8 @@ You can also run the Python control script on your Android phone using [Termux](
 
 ```
 OttoNinjaServoDriver/
+├── esp_files
+│   └──servo_driver.ino
 ├── app.py                # Flask server – connects Python logic with the web panel, handles HTTP requests
 ├── servo.py              # Here you define all robot movement and sequence functions (e.g. walk, dance, moonwalk)
 ├── static/
