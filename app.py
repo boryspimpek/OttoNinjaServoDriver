@@ -4,7 +4,7 @@ from servo import (
     return_to_neutral, left_swing, right_swing, left_walk_forward, right_walk_forward, 
     walk, left_walk_back, right_walk_back, moonwalk, steps, balerina, 
     weird, waddle, boogie, drink, 
-    circles
+    circles, up, spin
 )
 
 app = Flask(__name__)
@@ -106,6 +106,18 @@ def startdrink():
 def startcircles():
     threading.Thread(target=circles).start()
     return jsonify({'status': 'startedcircles'})
+
+# Spin
+@app.route('/startspin')
+def startspin():
+    threading.Thread(target=spin).start()
+    return jsonify({'status': 'startedspin'})
+
+# up
+@app.route('/startup')
+def startup():
+    threading.Thread(target=up).start()
+    return jsonify({'status': 'startedup'})
 
 @app.route('/stopwalk')
 def stopwalk():

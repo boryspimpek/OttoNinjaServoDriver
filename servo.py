@@ -135,7 +135,6 @@ def moonwalk(delay=0.4):
     time.sleep(delay)
     return_to_neutral()
 
-
 def steps(delay=0.5):
     for i in range(3):
         move_servo({LL: 35, RL: 80})
@@ -244,4 +243,17 @@ def circles():
     move_servo({LF: 102, RF: 67})
     time.sleep(3)
 
+    return_to_neutral()
+
+def up():
+    for i in range(3):
+        move_servo({LL:35, RL:145})
+        time.sleep(0.2)
+        return_to_neutral()
+
+def spin():
+    move_servo({LL: 55, RL: 125}) 
+    time.sleep(0.1)
+    move_servo({LF:45, RF:45})
+    time.sleep(1.4)
     return_to_neutral()
